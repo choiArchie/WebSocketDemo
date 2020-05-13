@@ -1,0 +1,2 @@
+include ':app', ':ws_library'
+rootProject.name='WebSocketDemo'
