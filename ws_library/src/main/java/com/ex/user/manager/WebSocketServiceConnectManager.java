@@ -69,51 +69,36 @@ public class WebSocketServiceConnectManager {
     private SocketListener mSocketListener = new SocketListener() {
         @Override
         public void onConnected() {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    webSocketPage.onConnected();
-                }
+            mHandler.post(() -> {
+                webSocketPage.onConnected();
             });
         }
 
         @Override
         public void onConnectError(final Throwable cause) {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    webSocketPage.onConnectError(cause);
-                }
+            mHandler.post(() -> {
+                webSocketPage.onConnectError(cause);
             });
         }
 
         @Override
         public void onDisconnected() {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    webSocketPage.onDisconnected();
-                }
+            mHandler.post(() -> {
+                webSocketPage.onDisconnected();
             });
         }
 
         @Override
         public void onMessageResponse(final Response message) {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    webSocketPage.onMessageResponse(message);
-                }
+            mHandler.post(() -> {
+                webSocketPage.onMessageResponse(message);
             });
         }
 
         @Override
         public void onSendMessageError(final ErrorResponse error) {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    webSocketPage.onSendMessageError(error);
-                }
+            mHandler.post(() -> {
+                webSocketPage.onSendMessageError(error);
             });
         }
     };

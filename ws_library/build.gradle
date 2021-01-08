@@ -32,6 +32,10 @@ android {
         include('classes.jar')
         rename('classes.jar', "ws_library" + getCurrentDate() + ".jar")
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     makeJar.dependsOn(build)
 }
 
